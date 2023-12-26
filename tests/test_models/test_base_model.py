@@ -14,6 +14,21 @@ class TestBaseModelInitialization(unittest.TestCase):
         # check if the instance is created
         self.assertIsInstance(model_instance, BaseModel)
 
+        def test_init_with_kwargs(self):
+            data = {
+                'id': 'sample-id',
+                'additional_attr': 'some-value',
+                'created_at': '2017-09-28T21:03:54.052298',
+                'updated_at': '2017-09-28T21:03:54.052298',
+            }
+            model_instance = BaseModel(**data)
+
+            # check that the instatition are correct
+            self.assertEqual(model_instance.id, 'sample-id')
+            self.assertEqual(model_instance.additional_attr, 'some-value')
+            self.assertIsInstance(model_instance.created_at, datetime)
+            self.assertIsInstance(model_instance.updated_at, datetime)
+
     def test_id_generation(self):
         model_instance1 = BaseModel()
         model_instance2 = BaseModel()
