@@ -8,14 +8,20 @@ import cmd
 class HBNBCommand(cmd.Cmd):
     """class for cli"""
 
-    prompt = "(hbnb)"
+    prompt = "(hbnb) "
 
     def do_quit(self, arg):
-        """enter quit to stop the console"""
-        return 1
+        """Quit command to exit the program
+        """
+        return True
+
+    def emptyline(self):
+        """overide the execution of last command"""
+        pass
 
     def do_EOF(self, arg):
         """You can enter $^D to stop the program"""
+        print()
         return True
 
 
