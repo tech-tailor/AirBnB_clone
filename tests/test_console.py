@@ -5,6 +5,7 @@ import unittest
 from unittest.mock import create_autospec
 from console import HBNBCommand
 
+
 class TestConsole(unittest.TestCase):
     """class TestConsole"""
 
@@ -28,6 +29,7 @@ class TestConsole(unittest.TestCase):
         """Tesing `quit` command"""
         cli = self.create()
         self.assertTrue(cli.onecmd("quit"))
+
 
 if __name__ == '__main__':
     unittest.main()
