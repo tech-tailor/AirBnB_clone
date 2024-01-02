@@ -123,9 +123,8 @@ class HBNBCommand(cmd.Cmd):
                     print(attr_name, attr_value)
                     # print(obj)
                     models.storage.save()
-                    print(obj)
             except Exception as e:
-                print("** no instance found  **", e)
+                print("** no instance found  **")
 
 
 if __name__ == "__main__":
