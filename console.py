@@ -118,7 +118,8 @@ class HBNBCommand(cmd.Cmd):
             try:
                 if len(args) >= 4:
                     attr_name = args[2]
-                    attr_value = (args[3])
+                    eval(args[3])
+                    attr_value = "'{}'".format(args[3])
                     setattr(obj, attr_name, attr_value)
                     print(attr_name, attr_value)
                     # print(obj)
